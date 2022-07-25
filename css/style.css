@@ -99,8 +99,7 @@ button {
 
 /* header */
 header {
-    padding-top: 37px;
-    height: 50px;
+    padding: 25px 0;
 }
 
 header img.logo {
@@ -165,9 +164,59 @@ header img.logo {
     left: 120%;
 }
 
+/* body .container {
+    opacity: 0.5;
+    filter: brightness(0.2);
+    -webkit-filter: brightness(0.2);
+    -ms-filter: brightness(0.2);
+} */
+
+.list-pop {
+    position: fixed;
+    background: url(../img/NFT\ Dark\ Responsive\ Landing\ Page\ UI\ UX\ Design\ Free\ Download\ \(Community\).png);
+    box-shadow: 0px 0px 20px 0px #0009;
+    height: 100vh;
+    width: 100%;
+    z-index: 1000;
+    padding: 20px;
+    transition: 0.5s;
+    transform: translateX(-100%);
+    display: none;
+}
+
+.content-list {
+    display: flex;
+}
+
+.list-btn-close {
+    position: relative;
+    margin-left: auto;
+    top: 28px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.list-btn-close p{
+    height: 3px;
+    width: 36px;
+    background-color: var(--primary-color-in);
+    position: absolute;
+    top: 0;
+}
+.list-btn-close p:first-child{
+    transform: rotate(50deg);
+}
+.list-btn-close p:last-child{
+    transform: rotate(-50deg);
+}
+
+.list-pop ul li{
+    padding: 20px 0;
+}
+
 /* section */
 .section-start {
-    margin-top: var(--primary-two-margin);
+    margin-top: calc(var(--primary-two-margin) - 100px);
     display: flex;
 }
 
@@ -225,11 +274,12 @@ header img.logo {
 
 .list-btn {
     display: none;
+    cursor: pointer;
 }
 
 .list-btn p {
-    height: 5px;
-    width: 38px;
+    height: 3px;
+    width: 36px;
     background-color: var(--primary-color-in);
 }
 
@@ -239,7 +289,6 @@ header img.logo {
 
 .card {
     float: right;
-    transition: 0.5s;
     position: relative;
 }
 
@@ -370,6 +419,25 @@ header img.logo {
     }
 }
 
+.to-top {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    transform: rotate(180deg);
+    z-index: 500;
+    display: none;
+}
+
+.to-top .btn-bot {
+    width: 60px;
+    height: 60px;
+    animation: none;
+}
+.to-top .btn-bot img {
+    height: 27px;
+    animation: none;
+}
+
 .company {
     margin-top: var(--primary-one-margin);
     display: flex;
@@ -452,6 +520,7 @@ header img.logo {
     padding: 25px;
     background: #3D2942;
     width: fit-content;
+    margin: 10px 0;
 }
 
 .img-c {
@@ -1175,6 +1244,10 @@ header img.logo {
 
     .footer .desc {
         margin: 0;
+    }
+
+    .list-pop {
+        display: block;
     }
 }
 
