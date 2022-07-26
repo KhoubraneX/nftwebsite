@@ -20,6 +20,7 @@
     --primary-one-margin: 100px;
     --primary-two-margin: 150px;
     --main-width-card: 453px;
+    --main-height-card: 585px;
     --font-one-mediam: 24px;
     --font-two-mediam: 20px;
     --font-three-mediam: 22px;
@@ -75,7 +76,7 @@ button {
     align-items: center;
     background-color: #16091B;
     z-index: 1000;
-    transform: 0.5s;
+    transition: 0.5s;
 }
 .preloder img {
     animation: opa 2s linear infinite;
@@ -269,7 +270,7 @@ header img.logo {
 }
 
 .content-s-right {
-    flex: 1;
+    margin-left: auto;
 }
 
 .list-btn {
@@ -294,7 +295,7 @@ header img.logo {
 
 .card img,
 .card {
-    height: 585px;
+    height: var(--main-height-card);
     width: var(--main-width-card);
 }
 
@@ -673,6 +674,33 @@ header img.logo {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    transition: all 1s;
+}
+
+.pop {
+    transform: translateY(0px) !important;
+    opacity: 1 !important;
+}
+
+.card-wallet , .card-wallet + img {
+    opacity: 0;
+}
+
+.card-wallet:first-child , .card-wallet:first-child + img {
+    transition: all 1s;
+    transform: translateY(150px);
+}
+div.card-wallet:nth-child(3) , .card-wallet:nth-child(3) + img {
+    transition: all 2s;
+    transform: translateY(150px);
+}
+div.card-wallet:nth-child(5) , .card-wallet:nth-child(5) + img {
+    transition: all 3s;
+    transform: translateY(150px);
+}
+div.card-wallet:nth-child(7) , .card-wallet:nth-child(7) + img {
+    transition: all 4s;
+    transform: translateY(150px);
 }
 
 .card-wallet .cercle {
@@ -976,6 +1004,49 @@ header img.logo {
     color: rgba(255, 255, 255, 0.869);
 }
 
+/* card effect */
+
+.box-wrap {
+    width: var(--main-width-card-card);
+    height: var(--main-height-card);
+    position: relative;
+    transition: all 0.6s ease-out;
+    perspective: 1000px;
+}
+
+.t_over {
+    width: 33.333%;
+    height: 33.333%;
+    position: absolute;
+    z-index: 1;
+}
+
+.t_over:nth-child(1){left: 0; top: 0;}
+.t_over:nth-child(2){left: 33.333%; top: 0;}
+.t_over:nth-child(3){left: 66.666%; top: 0;}
+.t_over:nth-child(4){left: 0; top: 33.333%;}
+.t_over:nth-child(5){left: 33.333%; top: 33.333%;}
+.t_over:nth-child(6){left: 66.666%; top: 33.333%;}
+.t_over:nth-child(7){left: 0; top: 66.666%;}
+.t_over:nth-child(8){left: 33.333%; top: 66.666%;}
+.t_over:nth-child(9){left: 66.666%; top: 66.666%;}
+
+.t_over:nth-child(1):hover ~ .card {transform: rotateX(-20deg) rotateY(20deg);}
+.t_over:nth-child(2):hover ~ .card {transform: rotateX(-20deg) rotateY(0deg);}
+.t_over:nth-child(3):hover ~ .card {transform: rotateX(-20deg) rotateY(-20deg);}
+.t_over:nth-child(4):hover ~ .card {transform: rotateX(0deg) rotateY(20deg);}
+.t_over:nth-child(5):hover ~ .card {transform: rotateX(0deg) rotateY(0deg);}
+.t_over:nth-child(6):hover ~ .card {transform: rotateX(0deg) rotateY(-20deg);}
+.t_over:nth-child(7):hover ~ .card {transform: rotateX(20deg) rotateY(20deg);}
+.t_over:nth-child(8):hover ~ .card {transform: rotateX(20deg) rotateY(0deg);}
+.t_over:nth-child(9):hover ~ .card {transform: rotateX(20deg) rotateY(-20deg);}
+
+.box-wrap .card {
+    transition: all 0.6s ease-out;
+    transform: rotateX(0deg) rotateY(0deg);
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
 
 @media (max-width:1400px) {
     :root {
@@ -1037,15 +1108,11 @@ header img.logo {
         --font-one-large: 24px;
         --font-two-large: 35px;
         --font-two-mediam: 16px;
+        --main-height-card: 523px;
     }
 
     .left-con {
         width: 660px;
-    }
-
-    .card img,
-    .card {
-        height: 523px;
     }
 
     .status-s {
@@ -1106,6 +1173,8 @@ header img.logo {
         --primary-one-margin: 60px;
         --primary-two-margin: 110px;
         --main-width-card: 300px;
+        --main-height-card: 450px;
+
     }
     .list-btn {
         display: block;
@@ -1119,6 +1188,10 @@ header img.logo {
 
     .left-side-s h1 {
         text-align: center;
+    }
+
+    .content-s-right {
+        margin-left: 0;
     }
 
     .status-s {
@@ -1164,7 +1237,7 @@ header img.logo {
 
     .flish {
         margin: 75px 0;
-        transform: rotate(90deg);
+        transform: rotate(90deg) !important;
     }
 
     .card-coll img {
@@ -1229,10 +1302,6 @@ header img.logo {
         width: 165px;
     }
 
-    .card img,
-    .card {
-        height: 450px;
-    }
 
     .bot-card {
         height: 85px;
