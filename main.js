@@ -92,7 +92,80 @@ window.addEventListener("scroll", () => {
     let point = 150
     let topSec = conectWallet.getBoundingClientRect().top
     if (heightBody > topSec - point) {
-        f.forEach(e =>e.classList.add("pop"))
+        f.forEach(e => e.classList.add("pop"))
         fimg.forEach(e => e.classList.add("pop"))
     }
 })
+
+
+// first slike
+function firstSlike() {
+    let cont = document.querySelector(".main-nft-sec")
+
+    let widthCont = getComputedStyle(cont).maxWidth
+
+    let cardN = document.querySelectorAll(".card-nft")
+
+    let widthCradN = getComputedStyle(cardN[0]).width
+
+    let marginCardN = (parseInt(widthCont) - (parseInt(widthCradN) * 3)) / 6
+
+    cardN.forEach(e => e.setAttribute("style", `margin:0 ${marginCardN}px;`))
+
+    let btnNext = document.querySelector(".btn-slider .next")
+    let btnPre = document.querySelector(".btn-slider .pre")
+    let sliderSlike = document.querySelector(".slider")
+
+    btnNext.addEventListener("click", function () {
+        sliderSlike.setAttribute("style", `transform: translateX(-${widthCont});`)
+        this.classList.add('clickOff')
+        btnPre.classList.add('clickOn')
+        this.classList.remove('clickOn')
+        btnPre.classList.remove('clickOff')
+    })
+
+    btnPre.addEventListener("click", function () {
+        sliderSlike.setAttribute("style", `transform: translateX(0px);`)
+        this.classList.add('clickOff')
+        btnNext.classList.add('clickOn')
+        this.classList.remove('clickOn')
+        btnNext.classList.remove('clickOff')
+    })
+}
+firstSlike()
+
+//  seconde slike
+function secondeSlike() {
+    let cont = document.querySelector(".main-nft-sec")
+
+    let widthCont = getComputedStyle(cont).maxWidth
+
+    let cardColl = document.querySelectorAll(".card-coll")
+    let widthCradColl = getComputedStyle(cardColl[0]).width
+    let marginCardColl = (parseInt(widthCont) - (parseInt(widthCradColl) * 3)) / 6
+
+    cardColl.forEach(e => e.setAttribute("style", `margin:0 ${marginCardColl}px;`))
+
+    let btnNextColl = document.querySelector(".btn-slider-coll .next")
+    let btnPreColl = document.querySelector(".btn-slider-coll .pre")
+    let sliderSlikeColl = document.querySelector(".slider-coll")
+
+    btnNextColl.addEventListener("click", function () {
+        sliderSlikeColl.setAttribute("style", `transform: translateX(-${widthCont});`)
+        this.style.display = "none"
+        btnPreColl.style.display = "block"
+    })
+
+    btnPreColl.addEventListener("click", function () {
+        sliderSlikeColl.setAttribute("style", `transform: translateX(0px);`)
+        this.style.display = "none"
+        btnNextColl.style.display = "block"
+    })
+}
+secondeSlike()
+
+// check size of dvice and execute slike
+window.addEventListener('resize', function(){
+    firstSlike()
+    secondeSlike()
+});
