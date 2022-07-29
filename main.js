@@ -2,11 +2,13 @@
 window.addEventListener("load", () => {
     let preloder = document.querySelector(".preloder")
     preloder.style.opacity = "0"
+    firstSlike()
+    secondeSlike()
     setTimeout(() => {
         document.querySelector(".preloder").remove()
         document.body.classList.remove("overflowBody")
         counterDown(2000)
-    }, 600)
+    },600)
 })
 
 // counter
@@ -132,7 +134,6 @@ function firstSlike() {
         btnNext.classList.remove('clickOff')
     })
 }
-firstSlike()
 
 //  seconde slike
 function secondeSlike() {
@@ -162,7 +163,7 @@ function secondeSlike() {
         btnNextColl.style.display = "block"
     })
 }
-secondeSlike()
+
 
 // check size of dvice and execute slike
 window.addEventListener('resize', function(){
