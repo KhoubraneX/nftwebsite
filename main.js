@@ -164,6 +164,12 @@ function secondeSlike() {
     })
 }
 
+// desgin two
+let manage = document.querySelector(".manage svg")
+manage.addEventListener("click" , function(){
+    document.body.classList.toggle("Ddark")
+})
+
 
 // check size of dvice and execute slike
 window.addEventListener('resize', function(){

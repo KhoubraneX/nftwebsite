@@ -9,6 +9,7 @@
 }
 
 :root {
+    --primary-background-:  url(../img/NFT\ Dark\ Responsive\ Landing\ Page\ UI\ UX\ Design\ Free\ Download\ \(Community\).png);
     --primary-color-y: #FFCE4E;
     --primary-color-text: #F5FBF2;
     --primary-color-card: #96839B;
@@ -16,6 +17,7 @@
     --primary-color-in: #E7B226;
     --primary-color-blur: #8613A5;
     --primary-color-black: #000000;
+    --primary-color-hover: #ffce4e8a;
     --primary-color-wallet: 90px;
     --primary-one-margin: 100px;
     --primary-two-margin: 150px;
@@ -37,11 +39,18 @@ html {
 
 body {
     background-color: #1C121F;
-    background-image: url(../img/NFT\ Dark\ Responsive\ Landing\ Page\ UI\ UX\ Design\ Free\ Download\ \(Community\).png);
+    background-image: var(--primary-background-);
     background-repeat: no-repeat;
     background-size: cover;
     color: var(--primary-color-text);
     position: relative;
+}
+
+.Ddark {
+    --primary-background-: url(../img/bg1.jpg);
+    --primary-color-hover: #ffffff85;
+    --primary-color-in: white;
+    --primary-color-y: white;
 }
 
 ul,
@@ -99,6 +108,36 @@ button {
 
 .overflowBody {
     overflow: hidden;
+}
+
+.manage {
+    position: fixed;
+    top: 50px;
+    left: -75px;
+    width: 80px;
+    height: 45px;
+    border-radius: 0px 5px 5px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 5px;
+    background: var(--primary-color-in);
+    transition: all 0.5s ease-out;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.268);
+}
+.manage svg {
+    height: 40px;
+    color: rgb(28 18 31);
+    cursor: pointer;
+}
+.manage:hover {
+    left: 0px;
+}
+
+@keyframes rotate-svg {
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 /* header */
@@ -177,7 +216,7 @@ header img.logo {
 
 .list-pop {
     position: fixed;
-    background: url(../img/NFT\ Dark\ Responsive\ Landing\ Page\ UI\ UX\ Design\ Free\ Download\ \(Community\).png);
+    background: var(--primary-background-);
     box-shadow: 0px 0px 20px 0px #0009;
     height: 100vh;
     width: 100%;
@@ -394,7 +433,7 @@ header img.logo {
 }
 
 .btn-bot:hover {
-    box-shadow: 0px 0px 20px 0px #ffce4e8a;
+    box-shadow: 0px 0px 20px 0px var(--primary-color-hover);
 }
 
 @keyframes btn-anim-bott {
